@@ -54,10 +54,11 @@ def start_scheduler():
     scheduler = BackgroundScheduler()
 
     # Schedule the job to run every 10 minutes (adjust the interval as needed)
-    scheduler.add_job(hit_api_endpoint, "cron", hour=16, minute=4,second=30, max_instances=1)
-
-
-    # Start the scheduler
-    scheduler.start()
-
-    print("Scheduler started, hitting the API every 10 minutes.")
+    scheduler.add_job(hit_api_endpoint, "cron", hour=22, minute=18, second=10, max_instances=1)
+    
+    try:
+        # Start the scheduler
+        print("kpkp")
+        scheduler.start()
+    except (KeyboardInterrupt, SystemExit):
+        scheduler.shutdown()
