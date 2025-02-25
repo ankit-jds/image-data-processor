@@ -118,3 +118,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOW_ALL_ORIGINS = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".fly.dev", "*"]
+
+# Celery Configuration
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Redis as the broker
+CELERY_BROKER_URL = env("REDIS_URL") 
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
