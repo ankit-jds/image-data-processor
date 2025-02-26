@@ -8,6 +8,9 @@ services:
       - key: REDIS_URL
         value: redis://redis:6379
     autoDeploy: true
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
 
   - name: celery
     type: worker
@@ -20,6 +23,7 @@ services:
       - key: RUN_CELERY
         value: "true"
     autoDeploy: true
+    ipAllowList: [] 
 
   - name: redis
     type: redis
