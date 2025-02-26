@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "1af0af51-546e-4ad5-8410-a4bba3afe0a1",
+		"name": "image_processor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20654381"
+	},
+	"item": [
+		{
+			"name": "UPLOAD_API",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csv_file",
+							"type": "file",
+							"src": "/C:/Users/brill/Downloads/RESUMES_2025/2025_02_24__SPYNE__BACKEND/csv_file.csv"
+						},
+						{
+							"key": "webhook_url",
+							"value": "https://webhook.site/07dac135-c6b4-47d0-b607-6c374aac80cb",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://image-data-processor.onrender.com/api/p/upload/",
+					"protocol": "https",
+					"host": [
+						"image-data-processor",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"p",
+						"upload",
+						""
+					]
+				},
+				"description": "You can use this site to check for webhook callback.\n\n[https://webhook.site/](https://webhook.site/)"
+			},
+			"response": [
+				{
+					"name": "UPLOAD",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "csv_file",
+									"type": "file",
+									"src": "/C:/Users/brill/Downloads/RESUMES_2025/2025_02_24__SPYNE__BACKEND/csv_file.csv"
+								},
+								{
+									"key": "webhook_url",
+									"value": "https://webhook.site/07dac135-c6b4-47d0-b607-6c374aac80cb",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://image-data-processor.onrender.com/api/p/upload/",
+							"protocol": "https",
+							"host": [
+								"image-data-processor",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"p",
+								"upload",
+								""
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 26 Feb 2025 19:04:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "52"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "rndr-id",
+							"value": "b4cc2857-7cc5-4db3"
+						},
+						{
+							"key": "vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "91823343cc0ba75b-DEL"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"request_id\": \"0de51f92-58f1-4158-a7fd-67f359329c80\"\n}"
+				}
+			]
+		},
+		{
+			"name": "STATUS_API",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://image-data-processor.onrender.com/api/p/status/0de51f92-58f1-4158-a7fd-67f359329c80",
+					"protocol": "https",
+					"host": [
+						"image-data-processor",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"p",
+						"status",
+						"0de51f92-58f1-4158-a7fd-67f359329c80"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "STATUS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://image-data-processor.onrender.com/api/p/status/0de51f92-58f1-4158-a7fd-67f359329c80",
+							"protocol": "https",
+							"host": [
+								"image-data-processor",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"p",
+								"status",
+								"0de51f92-58f1-4158-a7fd-67f359329c80"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 26 Feb 2025 19:04:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "475"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "cross-origin-opener-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "rndr-id",
+							"value": "afefa77e-0e2a-4ff4"
+						},
+						{
+							"key": "vary",
+							"value": "Accept, Cookie, origin"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "918233965921a75b-DEL"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"request_id\": \"0de51f92-58f1-4158-a7fd-67f359329c80\",\n    \"status\": \"processing\",\n    \"products\": [\n        {\n            \"serial_no\": 1,\n            \"product_name\": \"SKU1\",\n            \"input_urls\": \"https://res.cloudinary.com/demo/basketball_shot.jpg, https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 2,\n            \"product_name\": \"SKU2\",\n            \"input_urls\": \"https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp, https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 3,\n            \"product_name\": \"SKU3\",\n            \"input_urls\": \"https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg, https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 4,\n            \"product_name\": \"SKU4\",\n            \"input_urls\": \"https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 5,\n            \"product_name\": \"SKU5\",\n            \"input_urls\": \"https://res.cloudinary.com/demo/basketball_shot.jpg, https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 6,\n            \"product_name\": \"SKU6\",\n            \"input_urls\": \"https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp, https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 7,\n            \"product_name\": \"SKU7\",\n            \"input_urls\": \"https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg, https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 8,\n            \"product_name\": \"SKU8\",\n            \"input_urls\": \"https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 9,\n            \"product_name\": \"SKU9\",\n            \"input_urls\": \"https://res.cloudinary.com/demo/basketball_shot.jpg, https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 10,\n            \"product_name\": \"SKU10\",\n            \"input_urls\": \"https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp, https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 11,\n            \"product_name\": \"SKU11\",\n            \"input_urls\": \"https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg, https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 12,\n            \"product_name\": \"SKU12\",\n            \"input_urls\": \"https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 13,\n            \"product_name\": \"SKU13\",\n            \"input_urls\": \"https://res.cloudinary.com/demo/basketball_shot.jpg, https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 14,\n            \"product_name\": \"SKU14\",\n            \"input_urls\": \"https://the7eagles.com/wp-content/uploads/2024/05/What-is-an-Image-URL-1536x864.webp, https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 15,\n            \"product_name\": \"SKU15\",\n            \"input_urls\": \"https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg, https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        },\n        {\n            \"serial_no\": 16,\n            \"product_name\": \"SKU16\",\n            \"input_urls\": \"https://plus.unsplash.com/premium_photo-1683865776032-07bf70b0add1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dXJsfGVufDB8fDB8fHww\",\n            \"output_urls\": null\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
