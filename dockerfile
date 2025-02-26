@@ -18,5 +18,7 @@ COPY . .
 # Expose port 8000 for Django
 EXPOSE 8000
 
-# Default command (can be overridden by docker-compose)
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "image_processor.wsgi:application"]
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
