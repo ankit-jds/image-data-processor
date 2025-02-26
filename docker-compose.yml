@@ -1,0 +1,40 @@
+version: '3.8'
+
+networks:
+  django_network:
+    driver: bridge
+
+services:
+  web:
+    build: .
+    container_name: django_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+    networks:
+      - django_network
+    env_file:
+      - .env
+    command: ["gunicorn", "--bind", "0.0.0.0:8000", "image_processor.wsgi:application"]
+
+  celery:
+    build: .
+    container_name: celery_worker
+    depends_on:
+      - redis
+      - web
+    networks:
+      - django_network
+    env_file:
+      - .env
+    command: ["celery", "-A", "image_processor", "worker", "--loglevel=info"]
+
+  redis:
+    image: redis:7.2
+    container_name: redis_broker
+    networks:
+      - django_network
+    ports:
+      - "6379:6379"
+
