@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "processing"
+    "processing",
 ]
 
 MIDDLEWARE = [
@@ -112,8 +112,8 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 
-MEDIA_URL = '/media/'  # URL for serving media files
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Absolute path to media directory
+MEDIA_URL = "/media/"  # URL for serving media files
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")  # Absolute path to media directory
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -126,28 +126,28 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1", ".fly.dev", "*"]
 
 # Celery Configuration
 # CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Redis as the broker
-CELERY_BROKER_URL = env("REDIS_URL") 
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
+CELERY_BROKER_URL = env("CELERY_BROKER_URL")
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': 'celery_tasks.log',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": "celery_tasks.log",
         },
     },
-    'loggers': {
-        'celery': {
-            'handlers': ['file'],
-            'level': 'INFO',
-            'propagate': True,
+    "loggers": {
+        "celery": {
+            "handlers": ["file"],
+            "level": "INFO",
+            "propagate": True,
         },
     },
 }
 
 # IMAGE BB API KEY
-IMGBB_API_KEY = env('IMGBB_API_KEY')
+IMGBB_API_KEY = env("IMGBB_API_KEY")

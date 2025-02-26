@@ -1,0 +1,26 @@
+services:
+  - name: web
+    type: web
+    env: docker
+    repo: https://github.com/your-repo.git  # Replace with your actual repo
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: REDIS_URL
+        value: redis://redis:6379
+    command: ["gunicorn", "--bind", "0.0.0.0:8000", "image_processor.wsgi:application"]
+    autoDeploy: true
+
+  - name: celery
+    type: worker
+    env: docker
+    repo: https://github.com/your-repo.git  # Replace with your actual repo
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: REDIS_URL
+        value: redis://redis:6379
+    command: ["celery", "-A", "image_processor", "worker", "--loglevel=info"]
+    autoDeploy: true
+
+  - name: redis
+    type: redis
+    plan: free
